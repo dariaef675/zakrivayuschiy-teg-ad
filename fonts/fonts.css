@@ -15,3 +15,21 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-display: swap;
+  font-family: 'PressStar2P';
+  src:
+      local('PressStar2P-Regular'),    
+      url('../fonts/PressStart2P-Regular.woff') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter-Variable';
+  src:
+      local('Inter-Variable'),
+      url('../fonts/Inter-Variable.woff2') format('woff2 supports variations'),
+      url('../fonts/Inter-Variable.woff2') format('woff2-variations');
+  font-weight: 400 785;
+}
