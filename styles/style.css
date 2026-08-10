@@ -236,6 +236,10 @@
   display: flex;
 }
 
+.modal form {
+  display: contents;
+}
+
 .modal::backdrop {
   background-color: rgb(0 0 0 / 75%);
 }
