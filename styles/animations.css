@@ -9,3 +9,147 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+/* Кнопки Like / Сохранить на память / ОК */
+
+.button {
+  transition: box-shadow 0.3s ease;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--accent-color);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+/* Кнопка-обёртка сердца */
+
+.card__icon-button {
+  border-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color);
+}
+
+/* Иконка сердца: исходное состояние искр */
+
+.sparks {
+  opacity: 0;
+}
+
+/* Контур всегда быстро возвращается к своему цвету, когда лайк снят */
+
+.heart .contour {
+  transition: fill 0.1s linear;
+}
+
+/* Наведение курсора */
+
+.card__icon-button .heart .core {
+  transition: fill 0.3s ease 0.03s;
+}
+
+.card__icon-button .heart .main-body {
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button:hover .heart .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button:hover .heart .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease 0.05s;
+}
+
+.card__icon-button:hover .heart .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease 0.05s;
+}
+
+/* Нажатие и удержание */
+
+.card__icon-button:active .heart .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button:active .heart .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease 0.05s;
+}
+
+/* Клик — состояние is-liked */
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s ease 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: heart-scale 0.3s ease-in 0.1s 1;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-flash 0.3s ease-in 0.3s 1;
+}
+
+@keyframes heart-scale {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sparks-flash {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
