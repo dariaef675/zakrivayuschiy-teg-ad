@@ -35,7 +35,6 @@
   transform: translateX(0);
 }
 
-/* Кнопка-обёртка сердца */
 
 .card__icon-button {
   border-color: transparent;
@@ -50,19 +49,16 @@
   border-color: var(--accent-color);
 }
 
-/* Иконка сердца: исходное состояние искр */
 
 .sparks {
   opacity: 0;
 }
 
-/* Контур всегда быстро возвращается к своему цвету, когда лайк снят */
 
 .heart .contour {
   transition: fill 0.1s linear;
 }
 
-/* Наведение курсора */
 
 .card__icon-button .heart .core {
   transition: fill 0.3s ease 0.03s;
@@ -87,7 +83,7 @@
   transition: fill 0.3s ease 0.05s;
 }
 
-/* Нажатие и удержание */
+
 
 .card__icon-button:active .heart .core {
   fill: var(--animation-fill-color);
@@ -99,7 +95,6 @@
   transition: fill 0.3s ease 0.05s;
 }
 
-/* Клик — состояние is-liked */
 
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
