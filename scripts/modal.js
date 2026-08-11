@@ -1,13 +1,13 @@
-const modal = document.querySelector('.dialog');
-const openModalButton = document.querySelector('.save-button');
-const closeModalButton = document.querySelector('.dialog-button');
+const dialog = document.querySelector('.dialog');
+const openButton = document.querySelector('.save-button');
+const closeButton = document.querySelector('.dialog-button');
 
-openModalButton.addEventListener('click', (evt) => {
+openButton.addEventListener('click', (evt) => {
   evt.preventDefault();
-  modal.showModal();
+  dialog.showModal();
 });
 
-closeModalButton.addEventListener('click', (evt) => {
+closeButton.addEventListener('click', (evt) => {
   evt.preventDefault();
-  modal.close();
+  dialog.close();
 });
