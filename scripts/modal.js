@@ -1,17 +1,13 @@
-
-const modal = document.querySelector('.modal');
+const modal = document.querySelector('.dialog');
 const openModalButton = document.querySelector('.save-button');
-const closeModalButton = document.querySelector('.modal__button');
+const closeModalButton = document.querySelector('.dialog-button');
 
-openModalButton.addEventListener('click', () => {
+openModalButton.addEventListener('click', (evt) => {
+  evt.preventDefault();
   modal.showModal();
-  modal.classList.add('opened');
 });
 
-closeModalButton.addEventListener('click', () => {
+closeModalButton.addEventListener('click', (evt) => {
+  evt.preventDefault();
   modal.close();
-});
-
-modal.addEventListener('close', () => {
-  modal.classList.remove('opened');
 });
